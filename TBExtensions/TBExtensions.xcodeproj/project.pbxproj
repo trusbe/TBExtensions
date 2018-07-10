@@ -15,6 +15,10 @@
 		532BEFFC20F455C700EF0E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BEFFA20F455C700EF0E8C /* LaunchScreen.storyboard */; };
 		532BF00720F455C700EF0E8C /* TBExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF00620F455C700EF0E8C /* TBExtensionsTests.swift */; };
 		532BF01220F455C700EF0E8C /* TBExtensionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF01120F455C700EF0E8C /* TBExtensionsUITests.swift */; };
+		532BF02220F456F000EF0E8C /* TBData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02120F456F000EF0E8C /* TBData.swift */; };
+		532BF02420F460A500EF0E8C /* TBString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02320F460A500EF0E8C /* TBString.swift */; };
+		532BF02620F4A36400EF0E8C /* TBInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02520F4A36400EF0E8C /* TBInt.swift */; };
+		532BF02920F4A9A500EF0E8C /* TBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02820F4A9A500EF0E8C /* TBUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		532BF00D20F455C700EF0E8C /* TBExtensionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TBExtensionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		532BF01120F455C700EF0E8C /* TBExtensionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBExtensionsUITests.swift; sourceTree = "<group>"; };
 		532BF01320F455C700EF0E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		532BF02120F456F000EF0E8C /* TBData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBData.swift; sourceTree = "<group>"; };
+		532BF02320F460A500EF0E8C /* TBString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBString.swift; sourceTree = "<group>"; };
+		532BF02520F4A36400EF0E8C /* TBInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBInt.swift; sourceTree = "<group>"; };
+		532BF02820F4A9A500EF0E8C /* TBUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		532BEFED20F455BE00EF0E8C /* TBExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				532BF02720F4A99400EF0E8C /* Utils */,
 				532BF01F20F4566500EF0E8C /* Foundation */,
 				532BF02020F4566600EF0E8C /* UIKit */,
 				532BEFEE20F455BE00EF0E8C /* AppDelegate.swift */,
@@ -133,6 +142,9 @@
 		532BF01F20F4566500EF0E8C /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				532BF02120F456F000EF0E8C /* TBData.swift */,
+				532BF02320F460A500EF0E8C /* TBString.swift */,
+				532BF02520F4A36400EF0E8C /* TBInt.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -142,6 +154,14 @@
 			children = (
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		532BF02720F4A99400EF0E8C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				532BF02820F4A9A500EF0E8C /* TBUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +296,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				532BEFF720F455BF00EF0E8C /* TBExtensions.xcdatamodeld in Sources */,
+				532BF02920F4A9A500EF0E8C /* TBUtils.swift in Sources */,
 				532BEFF120F455BE00EF0E8C /* ViewController.swift in Sources */,
 				532BEFEF20F455BE00EF0E8C /* AppDelegate.swift in Sources */,
+				532BF02420F460A500EF0E8C /* TBString.swift in Sources */,
+				532BF02220F456F000EF0E8C /* TBData.swift in Sources */,
+				532BF02620F4A36400EF0E8C /* TBInt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
