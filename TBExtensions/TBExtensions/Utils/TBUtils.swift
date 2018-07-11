@@ -2,7 +2,7 @@
 //  TBUtils.swift
 //  TBExtensions
 //
-//  Created by xuntong on 2018/7/10.
+//  Created by TrusBe on 2018/7/10.
 //  Copyright © 2018年 TrusBe. All rights reserved.
 //
 
