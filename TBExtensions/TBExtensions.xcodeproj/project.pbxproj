@@ -19,6 +19,8 @@
 		532BF02420F460A500EF0E8C /* TBString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02320F460A500EF0E8C /* TBString.swift */; };
 		532BF02620F4A36400EF0E8C /* TBInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02520F4A36400EF0E8C /* TBInt.swift */; };
 		532BF02920F4A9A500EF0E8C /* TBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02820F4A9A500EF0E8C /* TBUtils.swift */; };
+		532BF02C20F4B73B00EF0E8C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 532BF02A20F4B73B00EF0E8C /* LICENSE */; };
+		532BF02D20F4B73B00EF0E8C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 532BF02B20F4B73B00EF0E8C /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		532BF02320F460A500EF0E8C /* TBString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBString.swift; sourceTree = "<group>"; };
 		532BF02520F4A36400EF0E8C /* TBInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBInt.swift; sourceTree = "<group>"; };
 		532BF02820F4A9A500EF0E8C /* TBUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBUtils.swift; sourceTree = "<group>"; };
+		532BF02A20F4B73B00EF0E8C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		532BF02B20F4B73B00EF0E8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 		532BEFE220F455BE00EF0E8C = {
 			isa = PBXGroup;
 			children = (
+				532BF02A20F4B73B00EF0E8C /* LICENSE */,
+				532BF02B20F4B73B00EF0E8C /* README.md */,
 				532BEFED20F455BE00EF0E8C /* TBExtensions */,
 				532BF00520F455C700EF0E8C /* TBExtensionsTests */,
 				532BF01020F455C700EF0E8C /* TBExtensionsUITests */,
@@ -270,6 +276,8 @@
 			files = (
 				532BEFFC20F455C700EF0E8C /* LaunchScreen.storyboard in Resources */,
 				532BEFF920F455C700EF0E8C /* Assets.xcassets in Resources */,
+				532BF02D20F4B73B00EF0E8C /* README.md in Resources */,
+				532BF02C20F4B73B00EF0E8C /* LICENSE in Resources */,
 				532BEFF420F455BE00EF0E8C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
