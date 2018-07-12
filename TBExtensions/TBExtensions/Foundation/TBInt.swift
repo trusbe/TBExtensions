@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Properties
 extension Int {
     /// 10进制转2进制
     var tb_toBinary: String {
