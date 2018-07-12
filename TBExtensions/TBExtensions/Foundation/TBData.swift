@@ -8,8 +8,8 @@
 
 import Foundation
 
+// MARK: - Init
 extension Data {
-    // MARK: Property
     /// Creates an Data instace based on a hex string (example: "ffff" would be <FF FF>).
     ///
     /// - parameter hex: The hex string without any spaces; should only have [0-9A-Fa-f].
@@ -28,12 +28,11 @@ extension Data {
         }
         self.init(bytes: bytes, count: bytes.count)
     }
+}
 
-    /// 数据转换成任意格式的字符串
-    func tb_string(as encoding: String.Encoding) -> String! {
-        return String(data: self, encoding: encoding)
-    }
 
+// MARK: - Properties
+extension Data {
     /// 数据转换成 UTF8 编码字符串
     internal var tb_utf8String: String? {
         return tb_string(as: .utf8)
@@ -61,7 +60,16 @@ extension Data {
             [UInt8](UnsafeBufferPointer(start: $0, count: count))
         }
     }
-    // MARK: Func
+}
+
+
+// MARK: - Methods
+extension Data {
+    /// 数据转换成任意格式的字符串
+    func tb_string(as encoding: String.Encoding) -> String! {
+        return String(data: self, encoding: encoding)
+    }
+    
     /// 随机生成指定数量的数据
     internal static func tb_dataWithNumberOfBytes(_ numberOfBytes: Int) -> Data {
         let bytes = malloc(numberOfBytes)
@@ -142,8 +150,6 @@ extension Data {
         return String(utf16CodeUnits: chars, count: chars.count)
     }
 }
-
-
 
 
 

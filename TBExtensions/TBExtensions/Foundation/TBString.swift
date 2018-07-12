@@ -8,38 +8,37 @@
 
 import Foundation
 
+// MARK: - Properties
 extension String {
     /// 16进制转10进制
     var tb_hexToDecimal: Int {
         return Int(strtoul(self, nil, 16))
     }
+    
     /// 16进制转2进制
     var tb_hexToBinary: String {
         return tb_hexToDecimal.tb_toBinary
     }
+    
     /// 2进制转10进制
     var tb_binaryToDecimal: Int {
         return Int(strtoul(self, nil, 2))
     }
+    
     /// 2进制转16进制
     var tb_binaryToHex: String {
         return tb_binaryToDecimal.tb_toHex
-    }
-
-    /// 字符串转数据, 非有损转换
-    func tb_toData(_ aString: String, encoding: String.Encoding) -> Data? {
-        return aString.data(using: encoding, allowLossyConversion: false)
     }
     
     /// 字符串转 UTF8 数据, 非有损转换
     internal var tb_utf8Data: Data? {
         return tb_toData(self, encoding: .utf8)
     }
-    
+
     /// 字节字符串转字节数组
     internal var tb_bytes: [UInt8] {
         var bytes = [UInt8]()
-
+        
         let length = self.count
         if length & 1 != 0 {
             return bytes
@@ -70,6 +69,16 @@ extension String {
         }
         guard data.count > 0 else { return Data() }
         return data
+    }
+
+}
+
+
+// MARK: - Methods
+extension String {
+    /// 字符串转数据, 非有损转换
+    func tb_toData(_ aString: String, encoding: String.Encoding) -> Data? {
+        return aString.data(using: encoding, allowLossyConversion: false)
     }
 }
 
