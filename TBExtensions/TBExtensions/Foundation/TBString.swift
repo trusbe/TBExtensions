@@ -8,35 +8,49 @@
 
 import Foundation
 
-// MARK: - Properties
-extension String {
-    /// 16进制转10进制
-    var tb_hexToDecimal: Int {
-        return Int(strtoul(self, nil, 16))
+public extension String {
+    /// 16进制转10进制, UInt8
+    internal var u8HexToDecimal: UInt8 {
+        return UInt8(strtoul(self, nil, 16))
     }
-    
-    /// 16进制转2进制
-    var tb_hexToBinary: String {
-        return tb_hexToDecimal.tb_toBinary
+    /// 16进制转2进制, UInt8
+    internal var u8HexToBinary: String {
+        return u8HexToDecimal.binary
     }
-    
-    /// 2进制转10进制
-    var tb_binaryToDecimal: Int {
-        return Int(strtoul(self, nil, 2))
+    /// 2进制转10进制, UInt8
+    internal var u8BinaryToDecimal: UInt8 {
+        return UInt8(strtoul(self, nil, 2))
     }
-    
-    /// 2进制转16进制
-    var tb_binaryToHex: String {
-        return tb_binaryToDecimal.tb_toHex
+    /// 2进制转16进制, UInt8
+    internal var u8BinaryToHex: String {
+        return u8BinaryToDecimal.hex
     }
-    
+    /// 16进制转10进制, UInt16
+    internal var u16HexToDecimal: UInt16 {
+        return UInt16(strtoul(self, nil, 16))
+    }
+    /// 16进制转2进制, UInt16
+    internal var u16HexToBinary: String {
+        return u16HexToDecimal.binary
+    }
+    /// 2进制转10进制, UInt16
+    internal var u16BinaryToDecimal: UInt16 {
+        return UInt16(strtoul(self, nil, 2))
+    }
+    /// 2进制转16进制, UInt16
+    internal var u16BinaryToHex: String {
+        return u16BinaryToDecimal.hex
+    }
+    /// 字符串转数据, 非有损转换
+    internal func toData(_ aString: String, encoding: String.Encoding) -> Data? {
+        return aString.data(using: encoding, allowLossyConversion: false)
+    }
     /// 字符串转 UTF8 数据, 非有损转换
-    internal var tb_utf8Data: Data? {
-        return tb_toData(self, encoding: .utf8)
+    var utf8Data: Data? {
+        return toData(self, encoding: .utf8)
     }
-
     /// 字节字符串转字节数组
-    internal var tb_bytes: [UInt8] {
+    internal var bytes: [UInt8] {
         var bytes = [UInt8]()
         
         let length = self.count
@@ -57,9 +71,8 @@ extension String {
         }
         return bytes
     }
-    
-    ///
-    internal var tb_data: Data {
+    /// 字符串转数据
+    var data: Data {
         var data = Data(capacity: self.count / 2)
         let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
         regex.enumerateMatches(in: self, range: NSMakeRange(0, utf16.count)) { match, flags, stop in
@@ -70,15 +83,18 @@ extension String {
         guard data.count > 0 else { return Data() }
         return data
     }
-
 }
 
 
-// MARK: - Methods
-extension String {
-    /// 字符串转数据, 非有损转换
-    func tb_toData(_ aString: String, encoding: String.Encoding) -> Data? {
-        return aString.data(using: encoding, allowLossyConversion: false)
+// MARK: - NSMutableAttributedString
+extension NSMutableAttributedString {
+    public func setAsLink(textToFind:String, linkURL:String) -> Bool {
+        let foundRange = self.mutableString.range(of: textToFind)
+        if foundRange.location != NSNotFound {
+            self.addAttribute(.link, value: linkURL, range: foundRange)
+            return true
+        }
+        return false
     }
 }
 

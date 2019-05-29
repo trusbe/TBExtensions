@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04F98E3E229E25D900BE15A2 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E3D229E25D900BE15A2 /* AppInfo.swift */; };
+		04F98E40229E619000BE15A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E3F229E619000BE15A2 /* Logger.swift */; };
+		04F98E42229E8A6300BE15A2 /* TBUInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E41229E8A6300BE15A2 /* TBUInt.swift */; };
 		532BEFEF20F455BE00EF0E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BEFEE20F455BE00EF0E8C /* AppDelegate.swift */; };
 		532BEFF120F455BE00EF0E8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BEFF020F455BE00EF0E8C /* ViewController.swift */; };
 		532BEFF420F455BE00EF0E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BEFF220F455BE00EF0E8C /* Main.storyboard */; };
@@ -41,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04F98E3D229E25D900BE15A2 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		04F98E3F229E619000BE15A2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		04F98E41229E8A6300BE15A2 /* TBUInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBUInt.swift; sourceTree = "<group>"; };
+		04F98E43229E97BB00BE15A2 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		532BEFEB20F455BE00EF0E8C /* TBExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532BEFEE20F455BE00EF0E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532BEFF020F455BE00EF0E8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +100,7 @@
 			children = (
 				532BF02A20F4B73B00EF0E8C /* LICENSE */,
 				532BF02B20F4B73B00EF0E8C /* README.md */,
+				04F98E43229E97BB00BE15A2 /* MyPlayground.playground */,
 				532BEFED20F455BE00EF0E8C /* TBExtensions */,
 				532BF00520F455C700EF0E8C /* TBExtensionsTests */,
 				532BF01020F455C700EF0E8C /* TBExtensionsUITests */,
@@ -151,6 +159,7 @@
 				532BF02120F456F000EF0E8C /* TBData.swift */,
 				532BF02320F460A500EF0E8C /* TBString.swift */,
 				532BF02520F4A36400EF0E8C /* TBInt.swift */,
+				04F98E41229E8A6300BE15A2 /* TBUInt.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -166,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				532BF02820F4A9A500EF0E8C /* TBUtils.swift */,
+				04F98E3D229E25D900BE15A2 /* AppInfo.swift */,
+				04F98E3F229E619000BE15A2 /* Logger.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -238,13 +249,16 @@
 				TargetAttributes = {
 					532BEFEA20F455BE00EF0E8C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
 					};
 					532BF00120F455C700EF0E8C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 532BEFEA20F455BE00EF0E8C;
 					};
 					532BF00C20F455C700EF0E8C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 532BEFEA20F455BE00EF0E8C;
 					};
 				};
@@ -307,7 +321,10 @@
 				532BF02920F4A9A500EF0E8C /* TBUtils.swift in Sources */,
 				532BEFF120F455BE00EF0E8C /* ViewController.swift in Sources */,
 				532BEFEF20F455BE00EF0E8C /* AppDelegate.swift in Sources */,
+				04F98E40229E619000BE15A2 /* Logger.swift in Sources */,
 				532BF02420F460A500EF0E8C /* TBString.swift in Sources */,
+				04F98E3E229E25D900BE15A2 /* AppInfo.swift in Sources */,
+				04F98E42229E8A6300BE15A2 /* TBUInt.swift in Sources */,
 				532BF02220F456F000EF0E8C /* TBData.swift in Sources */,
 				532BF02620F4A36400EF0E8C /* TBInt.swift in Sources */,
 			);
@@ -491,7 +508,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trusbe.TBExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -509,7 +526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trusbe.TBExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -529,7 +546,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trusbe.TBExtensionsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBExtensions.app/TBExtensions";
 			};
@@ -550,7 +567,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trusbe.TBExtensionsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBExtensions.app/TBExtensions";
 			};
@@ -570,7 +587,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trusbe.TBExtensionsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TBExtensions;
 			};
@@ -590,7 +607,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trusbe.TBExtensionsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TBExtensions;
 			};
