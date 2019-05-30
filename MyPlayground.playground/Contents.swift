@@ -3,6 +3,7 @@
 import UIKit
 import PlaygroundSupport
 
+// MARK: - Logger
 public func logger(with title: String, subTitle: String, info: String?) {
     if info == nil {
         print("【\(title)】, \(subTitle)")
@@ -11,10 +12,12 @@ public func logger(with title: String, subTitle: String, info: String?) {
     }
 }
 
+
+// MARK: - Data
 extension Data {
     /// Hex string to Data representation
     /// Inspired by https://stackoverflow.com/questions/26501276/converting-hex-string-to-nsdata-in-swift
-    init?(hex: String) {
+    public init?(hex: String) {
         guard hex.count % 2 == 0 else {
             return nil
         }
@@ -33,14 +36,282 @@ extension Data {
         }
         self = data
     }
-    
     /// Hexadecimal string representation of `Data` object.
-    var hex: String {
+    public var hex: String {
         return map { String(format: "%02X", $0) }.joined()
+    }
+    /// 数据转换成任意格式的字符串
+    public func toString(as encoding: String.Encoding) -> String! {
+        return String(data: self, encoding: encoding)
+    }
+    /// 数据转换成 UTF8 编码字符串
+    public var utf8String: String? {
+        return toString(as: .utf8)
+    }
+    /// 获取数据字节数组
+    private func getByteArray(_ pointer: UnsafePointer<UInt8>) -> [UInt8] {
+        let buffer = UnsafeBufferPointer<UInt8>(start: pointer, count: count)
+        return [UInt8](buffer)
+    }
+    /// 随机生成指定数量的数据
+    public static func randomData(length: Int) -> Data {
+        let bytes = malloc(length)
+        let data = Data(bytes: bytes!, count: length)
+        free(bytes)
+        return data
+    }
+    /// Data to Int8
+    public var int8: Int8 {
+        get {
+            return Int8(bitPattern: self[0])
+        }
+    }
+    /// Data to Int16, littleEndian
+    public var int16Little: Int16 {
+        get {
+            #if swift(>=5.0)
+            return Int16(littleEndian: self.withUnsafeBytes { $0.load(as: Int16.self) })
+            #else
+            return Int16(littleEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to Int32, littleEndian
+    public var int32Little: Int32 {
+        get {
+            #if swift(>=5.0)
+            return Int32(littleEndian: self.withUnsafeBytes { $0.load(as: Int32.self) })
+            #else
+            return Int32(littleEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to Int64, littleEndian
+    private var int64Little: Int64 {
+        get {
+            #if swift(>=5.0)
+            return Int64(littleEndian: self.withUnsafeBytes { $0.load(as: Int64.self) })
+            #else
+            return Int64(littleEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to UInt8
+    public var uint8: UInt8 {
+        get {
+            var number: UInt8 = 0
+            self.copyBytes(to:&number, count: MemoryLayout<UInt8>.size)
+            return number
+        }
+    }
+    /// Data to UInt16, littleEndian
+    public var uint16Little: UInt16 {
+        get {
+            #if swift(>=5.0)
+            return UInt16(littleEndian: self.withUnsafeBytes { $0.load(as: UInt16.self) })
+            #else
+            return UInt16(littleEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to UInt32, littleEndian
+    public var uint32Little: UInt32 {
+        get {
+            #if swift(>=5.0)
+            return UInt32(littleEndian: self.withUnsafeBytes { $0.load(as: UInt32.self) })
+            #else
+            return UInt32(littleEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to UInt64, littleEndian
+    private var uint64Little: UInt64 {
+        get {
+            #if swift(>=5.0)
+            return UInt64(littleEndian: self.withUnsafeBytes { $0.load(as: UInt64.self) })
+            #else
+            return UInt64(littleEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to Int16, bigEndian
+    public var int16Big: Int16 {
+        get {
+            #if swift(>=5.0)
+            return Int16(bigEndian: self.withUnsafeBytes { $0.load(as: Int16.self) })
+            #else
+            return Int16(bigEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to Int32, bigEndian
+    public var int32Big: Int32 {
+        get {
+            #if swift(>=5.0)
+            return Int32(bigEndian: self.withUnsafeBytes { $0.load(as: Int32.self) })
+            #else
+            return Int32(bigEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to Int64, bigEndian
+    private var int64Big: Int64 {
+        get {
+            #if swift(>=5.0)
+            return Int64(bigEndian: self.withUnsafeBytes { $0.load(as: Int64.self) })
+            #else
+            return Int64(bigEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to UInt16, bigEndian
+    public var uint16Big: UInt16 {
+        get {
+            #if swift(>=5.0)
+            return UInt16(bigEndian: self.withUnsafeBytes { $0.load(as: UInt16.self) })
+            #else
+            return UInt16(bigEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to UInt32, bigEndian
+    public var uint32Big: UInt32 {
+        get {
+            #if swift(>=5.0)
+            return UInt32(bigEndian: self.withUnsafeBytes { $0.load(as: UInt32.self) })
+            #else
+            return UInt32(bigEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+    /// Data to UInt64, bigEndian
+    private var uint64Big: UInt64 {
+        get {
+            #if swift(>=5.0)
+            return UInt64(bigEndian: self.withUnsafeBytes { $0.load(as: UInt64.self) })
+            #else
+            return UInt64(bigEndian: self.withUnsafeBytes { $0.pointee })
+            #endif
+        }
+    }
+
+    
+    
+
+    func asValue<R>(offset: Int = 0) -> R {
+        let length = MemoryLayout<R>.size
+        
+        #if swift(>=5.0)
+        return subdata(in: offset ..< offset + length).withUnsafeBytes { $0.load(as: R.self) }
+        #else
+        return subdata(in: offset ..< offset + length).withUnsafeBytes { $0.pointee }
+        #endif
+    }
+
+    /// 获取某一个字节的 UInt8 类型
+    func byte(at index: Int) -> UInt8 {
+        let data: UInt8 = self.subdata(in: index ..< (index + 1)).uint8
+        return data
     }
 }
 
 
+
+
+
+/// MARK: - TEST Data
+let  dataStr = "FFFE"
+let data = Data(hex: dataStr)
+data?.hex
+let data1 = Data([0x7f, 0x32, 0x33, 0x34])
+data1.toString(as: .utf8)
+data1.utf8String
+data1.byte(at: 0)
+
+let rData = Data.randomData(length: 5)
+rData.hex
+let index1 = Data([0x7f])
+let index2 = Data([0x7f, 0x7f])
+let index3 = Data([0x7f, 0x7f, 0x7f, 0x7f])
+let index4 = Data([0x7f, 0x7f, 0x7f, 0x7f, 0x7f, 0x7f, 0x7f, 0x7f])
+
+index1.int8
+index2.int16Little
+index3.int32Little
+//index4.int64Little
+
+index1.uint8
+index2.uint16Little
+index3.uint32Little
+//index4.uint64Little
+
+index2.int16Big
+index3.int32Big
+//index4.int64Big
+
+index2.uint16Big
+index3.uint32Big
+//index4.uint64Big
+
+
+
+
+
+
+
+
+
+
+public protocol DataConvertible {
+    static func + (lhs: Data, rhs: Self) -> Data
+    static func += (lhs: inout Data, rhs: Self)
+}
+
+extension DataConvertible {
+    
+    public static func + (lhs: Data, rhs: Self) -> Data {
+        var value = rhs
+        let data = Data(buffer: UnsafeBufferPointer(start: &value, count: 1))
+        return lhs + data
+    }
+    
+    public static func += (lhs: inout Data, rhs: Self) {
+        lhs = lhs + rhs
+    }
+    
+}
+
+extension UInt8  : DataConvertible { }
+extension UInt16 : DataConvertible { }
+extension UInt32 : DataConvertible { }
+
+extension Int    : DataConvertible { }
+extension Float  : DataConvertible { }
+extension Double : DataConvertible { }
+
+extension String : DataConvertible {
+    
+    public static func + (lhs: Data, rhs: String) -> Data {
+        guard let data = rhs.data(using: .utf8) else { return lhs}
+        return lhs + data
+    }
+    
+}
+
+extension Data : DataConvertible {
+    
+    public static func + (lhs: Data, rhs: Data) -> Data {
+        var data = Data()
+        data.append(lhs)
+        data.append(rhs)
+        
+        return data
+    }
+    
+}
+
+
+// MARK: - UInt
 extension UInt8 {
     /// Data to UInt8
     init(data: Data) {

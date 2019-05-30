@@ -97,19 +97,3 @@ extension NSMutableAttributedString {
         return false
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
