@@ -194,25 +194,24 @@ extension Data {
             #endif
         }
     }
-
-    
-    
-
-    func asValue<R>(offset: Int = 0) -> R {
-        let length = MemoryLayout<R>.size
-        
-        #if swift(>=5.0)
-        return subdata(in: offset ..< offset + length).withUnsafeBytes { $0.load(as: R.self) }
-        #else
-        return subdata(in: offset ..< offset + length).withUnsafeBytes { $0.pointee }
-        #endif
-    }
-
     /// 获取某一个字节的 UInt8 类型
     func byte(at index: Int) -> UInt8 {
         let data: UInt8 = self.subdata(in: index ..< (index + 1)).uint8
         return data
     }
+    /// Data to Byte Array
+    func bytes() -> [UInt8] {
+        // let count = MemoryLayout.size(ofValue: self)
+        let count = self.count
+        var copyOfSelf = self
+        let data = withUnsafePointer(to: &copyOfSelf) {
+            $0.withMemoryRebound(to: UInt8.self, capacity: count, {
+                UnsafeBufferPointer(start: $0, count: count)
+            })
+        }
+        return Array(data)
+    }
+    
 }
 
 
@@ -227,6 +226,8 @@ let data1 = Data([0x7f, 0x32, 0x33, 0x34])
 data1.toString(as: .utf8)
 data1.utf8String
 data1.byte(at: 0)
+data1.bytes()
+
 
 let rData = Data.randomData(length: 5)
 rData.hex
@@ -254,61 +255,6 @@ index3.uint32Big
 //index4.uint64Big
 
 
-
-
-
-
-
-
-
-
-public protocol DataConvertible {
-    static func + (lhs: Data, rhs: Self) -> Data
-    static func += (lhs: inout Data, rhs: Self)
-}
-
-extension DataConvertible {
-    
-    public static func + (lhs: Data, rhs: Self) -> Data {
-        var value = rhs
-        let data = Data(buffer: UnsafeBufferPointer(start: &value, count: 1))
-        return lhs + data
-    }
-    
-    public static func += (lhs: inout Data, rhs: Self) {
-        lhs = lhs + rhs
-    }
-    
-}
-
-extension UInt8  : DataConvertible { }
-extension UInt16 : DataConvertible { }
-extension UInt32 : DataConvertible { }
-
-extension Int    : DataConvertible { }
-extension Float  : DataConvertible { }
-extension Double : DataConvertible { }
-
-extension String : DataConvertible {
-    
-    public static func + (lhs: Data, rhs: String) -> Data {
-        guard let data = rhs.data(using: .utf8) else { return lhs}
-        return lhs + data
-    }
-    
-}
-
-extension Data : DataConvertible {
-    
-    public static func + (lhs: Data, rhs: Data) -> Data {
-        var data = Data()
-        data.append(lhs)
-        data.append(rhs)
-        
-        return data
-    }
-    
-}
 
 
 // MARK: - UInt
