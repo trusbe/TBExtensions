@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     // MARK: View
     func loadMainView() {
-        
+        logger(with: "VC", subTitle: "Main", info: "\(AppInfo.getCurrentWiFiSSID()), \(AppInfo.getWiFiSSID())")
     }
     
     // MARK: Implementaiton

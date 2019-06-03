@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SystemConfiguration.CaptiveNetwork
 
 struct AppInfo {
     
@@ -21,5 +22,31 @@ struct AppInfo {
     /// Returns Build Number as String.
     static var buildNumber: String {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
+    }
+    
+    /// 获取当前连接 WIFI 的 SSID, iOS12 以后需要在项目的 Capabilities -> Access WiFi Information -> ON
+    static func getCurrentWiFiSSID() -> String? {
+        var ssid: String?
+        if let interfaces = CNCopySupportedInterfaces() as NSArray? {
+            for interface in interfaces {
+                if let interfaceInfo = CNCopyCurrentNetworkInfo(interface as! CFString) as NSDictionary? {
+                    ssid = interfaceInfo[kCNNetworkInfoKeySSID as String] as? String
+                    break
+                }
+            }
+        }
+        return ssid
+    }
+    /// 获取当前 Wi-Fi SSID, iOS12 以后需要在项目的 Capabilities -> Access WiFi Information -> ON
+    static func getWiFiSSID() -> String? {
+        guard let interfaces = CNCopySupportedInterfaces() as? [String] else { return nil }
+        let key = kCNNetworkInfoKeySSID as String
+        for interface in interfaces {
+            print("【UIDevice】, WiFiSSID, interface: \(interface)")
+            guard let interfaceInfo = CNCopyCurrentNetworkInfo(interface as CFString) as NSDictionary? else { continue }
+            print("【UIDevice】, WiFiSSID, interfaceInfo: \(interfaceInfo)")
+            return interfaceInfo[key] as? String
+        }
+        return nil
     }
 }

@@ -12,6 +12,11 @@ public func logger(with title: String, subTitle: String, info: String?) {
     }
 }
 
+
+// MARK: - TEST
+
+
+
 // MARK: - TBBinary
 public struct TBBinary {
     public let bytes: [UInt8]
@@ -393,8 +398,8 @@ extension Data {
 
 /// MARK: - TEST Data
 let  dataStr = "FFFE"
-let data = Data(hex: dataStr)
-data?.hex
+let data0 = Data(hex: dataStr)
+data0?.hex
 let data1 = Data([0x7f, 0x32, 0x33, 0x34])
 data1.toString(as: .utf8)
 data1.utf8String
