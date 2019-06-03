@@ -10,6 +10,8 @@
 		04F98E3E229E25D900BE15A2 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E3D229E25D900BE15A2 /* AppInfo.swift */; };
 		04F98E40229E619000BE15A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E3F229E619000BE15A2 /* Logger.swift */; };
 		04F98E42229E8A6300BE15A2 /* TBUInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E41229E8A6300BE15A2 /* TBUInt.swift */; };
+		04F98E4522A4CE7C00BE15A2 /* TBTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E4422A4CE7C00BE15A2 /* TBTimer.swift */; };
+		04F98E4722A4FA5C00BE15A2 /* TBBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E4622A4FA5C00BE15A2 /* TBBinary.swift */; };
 		532BEFEF20F455BE00EF0E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BEFEE20F455BE00EF0E8C /* AppDelegate.swift */; };
 		532BEFF120F455BE00EF0E8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BEFF020F455BE00EF0E8C /* ViewController.swift */; };
 		532BEFF420F455BE00EF0E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BEFF220F455BE00EF0E8C /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		04F98E3F229E619000BE15A2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		04F98E41229E8A6300BE15A2 /* TBUInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBUInt.swift; sourceTree = "<group>"; };
 		04F98E43229E97BB00BE15A2 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		04F98E4422A4CE7C00BE15A2 /* TBTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBTimer.swift; sourceTree = "<group>"; };
+		04F98E4622A4FA5C00BE15A2 /* TBBinary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBBinary.swift; sourceTree = "<group>"; };
 		532BEFEB20F455BE00EF0E8C /* TBExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532BEFEE20F455BE00EF0E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532BEFF020F455BE00EF0E8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				532BF02320F460A500EF0E8C /* TBString.swift */,
 				532BF02520F4A36400EF0E8C /* TBInt.swift */,
 				04F98E41229E8A6300BE15A2 /* TBUInt.swift */,
+				04F98E4622A4FA5C00BE15A2 /* TBBinary.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				532BF02820F4A9A500EF0E8C /* TBUtils.swift */,
 				04F98E3D229E25D900BE15A2 /* AppInfo.swift */,
 				04F98E3F229E619000BE15A2 /* Logger.swift */,
+				04F98E4422A4CE7C00BE15A2 /* TBTimer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -321,9 +327,11 @@
 				532BF02920F4A9A500EF0E8C /* TBUtils.swift in Sources */,
 				532BEFF120F455BE00EF0E8C /* ViewController.swift in Sources */,
 				532BEFEF20F455BE00EF0E8C /* AppDelegate.swift in Sources */,
+				04F98E4522A4CE7C00BE15A2 /* TBTimer.swift in Sources */,
 				04F98E40229E619000BE15A2 /* Logger.swift in Sources */,
 				532BF02420F460A500EF0E8C /* TBString.swift in Sources */,
 				04F98E3E229E25D900BE15A2 /* AppInfo.swift in Sources */,
+				04F98E4722A4FA5C00BE15A2 /* TBBinary.swift in Sources */,
 				04F98E42229E8A6300BE15A2 /* TBUInt.swift in Sources */,
 				532BF02220F456F000EF0E8C /* TBData.swift in Sources */,
 				532BF02620F4A36400EF0E8C /* TBInt.swift in Sources */,
