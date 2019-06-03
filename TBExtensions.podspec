@@ -7,12 +7,14 @@ This project mainly concentrates on some commonly used extension interfaces, whi
                    DESC
 
   s.homepage     = "https://github.com/trusbe/TBExtensions.git"
-  s.license      = "MIT"
+  s.license = { type: 'MIT', file: 'LICENSE' }
   s.author       = { "TrusBe" => "theplough.891127@163.com" }
   s.source       = { :git => "https://github.com/trusbe/TBExtensions.git", :tag => "#{s.version}" }
 
-  s.swift_version    = '5.0'
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
 
-  s.source_files  = "TBExtensions/TBExtensions/Classes/**/*"
+  s.swift_version    = '5.0'
+  s.requires_arc = true
+
+  s.source_files  = "TBExtensions/TBExtensions/Classes/**/*.swift"
 end
