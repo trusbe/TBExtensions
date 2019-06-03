@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04F98E3E229E25D900BE15A2 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E3D229E25D900BE15A2 /* AppInfo.swift */; };
-		04F98E40229E619000BE15A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E3F229E619000BE15A2 /* Logger.swift */; };
-		04F98E42229E8A6300BE15A2 /* TBUInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E41229E8A6300BE15A2 /* TBUInt.swift */; };
-		04F98E4722A4FA5C00BE15A2 /* TBBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E4622A4FA5C00BE15A2 /* TBBinary.swift */; };
-		04F98E4922A4FB8000BE15A2 /* TBTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E4822A4FB8000BE15A2 /* TBTimer.swift */; };
-		04F98E4B22A4FD2F00BE15A2 /* TBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E4A22A4FD2F00BE15A2 /* TBColor.swift */; };
-		04F98E4E22A5040800BE15A2 /* TBRegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E4D22A5040800BE15A2 /* TBRegExp.swift */; };
-		04F98E5522A5054700BE15A2 /* TBTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E5022A5054700BE15A2 /* TBTextView.swift */; };
-		04F98E5622A5054700BE15A2 /* TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E5122A5054700BE15A2 /* TBView.swift */; };
-		04F98E5722A5054700BE15A2 /* TBTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E5222A5054700BE15A2 /* TBTabBar.swift */; };
-		04F98E5822A5054700BE15A2 /* TBLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E5322A5054700BE15A2 /* TBLabel.swift */; };
-		04F98E5922A5054700BE15A2 /* TBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E5422A5054700BE15A2 /* TBTextField.swift */; };
+		04F98E5B22A5084B00BE15A2 /* TBExtensions.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 04F98E5A22A5084B00BE15A2 /* TBExtensions.podspec */; };
+		04F98E7022A50A4F00BE15A2 /* TBTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E5E22A50A4F00BE15A2 /* TBTextView.swift */; };
+		04F98E7122A50A4F00BE15A2 /* TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E5F22A50A4F00BE15A2 /* TBView.swift */; };
+		04F98E7222A50A4F00BE15A2 /* TBTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6022A50A4F00BE15A2 /* TBTabBar.swift */; };
+		04F98E7322A50A4F00BE15A2 /* TBLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6122A50A4F00BE15A2 /* TBLabel.swift */; };
+		04F98E7422A50A4F00BE15A2 /* TBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6222A50A4F00BE15A2 /* TBTextField.swift */; };
+		04F98E7522A50A4F00BE15A2 /* TBBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6422A50A4F00BE15A2 /* TBBinary.swift */; };
+		04F98E7622A50A4F00BE15A2 /* TBString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6522A50A4F00BE15A2 /* TBString.swift */; };
+		04F98E7722A50A4F00BE15A2 /* TBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6622A50A4F00BE15A2 /* TBColor.swift */; };
+		04F98E7822A50A4F00BE15A2 /* TBInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6722A50A4F00BE15A2 /* TBInt.swift */; };
+		04F98E7922A50A4F00BE15A2 /* TBUInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6822A50A4F00BE15A2 /* TBUInt.swift */; };
+		04F98E7A22A50A4F00BE15A2 /* TBData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6922A50A4F00BE15A2 /* TBData.swift */; };
+		04F98E7B22A50A4F00BE15A2 /* TBTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6A22A50A4F00BE15A2 /* TBTimer.swift */; };
+		04F98E7C22A50A4F00BE15A2 /* TBRegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6C22A50A4F00BE15A2 /* TBRegExp.swift */; };
+		04F98E7D22A50A4F00BE15A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6D22A50A4F00BE15A2 /* Logger.swift */; };
+		04F98E7E22A50A4F00BE15A2 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6E22A50A4F00BE15A2 /* AppInfo.swift */; };
+		04F98E7F22A50A4F00BE15A2 /* TBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F98E6F22A50A4F00BE15A2 /* TBUtils.swift */; };
 		532BEFEF20F455BE00EF0E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BEFEE20F455BE00EF0E8C /* AppDelegate.swift */; };
 		532BEFF120F455BE00EF0E8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BEFF020F455BE00EF0E8C /* ViewController.swift */; };
 		532BEFF420F455BE00EF0E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BEFF220F455BE00EF0E8C /* Main.storyboard */; };
@@ -27,10 +32,6 @@
 		532BEFFC20F455C700EF0E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BEFFA20F455C700EF0E8C /* LaunchScreen.storyboard */; };
 		532BF00720F455C700EF0E8C /* TBExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF00620F455C700EF0E8C /* TBExtensionsTests.swift */; };
 		532BF01220F455C700EF0E8C /* TBExtensionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF01120F455C700EF0E8C /* TBExtensionsUITests.swift */; };
-		532BF02220F456F000EF0E8C /* TBData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02120F456F000EF0E8C /* TBData.swift */; };
-		532BF02420F460A500EF0E8C /* TBString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02320F460A500EF0E8C /* TBString.swift */; };
-		532BF02620F4A36400EF0E8C /* TBInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02520F4A36400EF0E8C /* TBInt.swift */; };
-		532BF02920F4A9A500EF0E8C /* TBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BF02820F4A9A500EF0E8C /* TBUtils.swift */; };
 		532BF02C20F4B73B00EF0E8C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 532BF02A20F4B73B00EF0E8C /* LICENSE */; };
 		532BF02D20F4B73B00EF0E8C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 532BF02B20F4B73B00EF0E8C /* README.md */; };
 /* End PBXBuildFile section */
@@ -53,20 +54,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04F98E3D229E25D900BE15A2 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
-		04F98E3F229E619000BE15A2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		04F98E41229E8A6300BE15A2 /* TBUInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBUInt.swift; sourceTree = "<group>"; };
 		04F98E43229E97BB00BE15A2 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		04F98E4622A4FA5C00BE15A2 /* TBBinary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBBinary.swift; sourceTree = "<group>"; };
-		04F98E4822A4FB8000BE15A2 /* TBTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTimer.swift; sourceTree = "<group>"; };
-		04F98E4A22A4FD2F00BE15A2 /* TBColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBColor.swift; sourceTree = "<group>"; };
 		04F98E4C22A5039700BE15A2 /* TBExtensions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TBExtensions.entitlements; sourceTree = "<group>"; };
-		04F98E4D22A5040800BE15A2 /* TBRegExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBRegExp.swift; sourceTree = "<group>"; };
-		04F98E5022A5054700BE15A2 /* TBTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTextView.swift; sourceTree = "<group>"; };
-		04F98E5122A5054700BE15A2 /* TBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBView.swift; sourceTree = "<group>"; };
-		04F98E5222A5054700BE15A2 /* TBTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTabBar.swift; sourceTree = "<group>"; };
-		04F98E5322A5054700BE15A2 /* TBLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBLabel.swift; sourceTree = "<group>"; };
-		04F98E5422A5054700BE15A2 /* TBTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTextField.swift; sourceTree = "<group>"; };
+		04F98E5A22A5084B00BE15A2 /* TBExtensions.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TBExtensions.podspec; path = ../TBExtensions.podspec; sourceTree = "<group>"; };
+		04F98E5E22A50A4F00BE15A2 /* TBTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTextView.swift; sourceTree = "<group>"; };
+		04F98E5F22A50A4F00BE15A2 /* TBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBView.swift; sourceTree = "<group>"; };
+		04F98E6022A50A4F00BE15A2 /* TBTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTabBar.swift; sourceTree = "<group>"; };
+		04F98E6122A50A4F00BE15A2 /* TBLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBLabel.swift; sourceTree = "<group>"; };
+		04F98E6222A50A4F00BE15A2 /* TBTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTextField.swift; sourceTree = "<group>"; };
+		04F98E6422A50A4F00BE15A2 /* TBBinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBBinary.swift; sourceTree = "<group>"; };
+		04F98E6522A50A4F00BE15A2 /* TBString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBString.swift; sourceTree = "<group>"; };
+		04F98E6622A50A4F00BE15A2 /* TBColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBColor.swift; sourceTree = "<group>"; };
+		04F98E6722A50A4F00BE15A2 /* TBInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBInt.swift; sourceTree = "<group>"; };
+		04F98E6822A50A4F00BE15A2 /* TBUInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBUInt.swift; sourceTree = "<group>"; };
+		04F98E6922A50A4F00BE15A2 /* TBData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBData.swift; sourceTree = "<group>"; };
+		04F98E6A22A50A4F00BE15A2 /* TBTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTimer.swift; sourceTree = "<group>"; };
+		04F98E6C22A50A4F00BE15A2 /* TBRegExp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBRegExp.swift; sourceTree = "<group>"; };
+		04F98E6D22A50A4F00BE15A2 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		04F98E6E22A50A4F00BE15A2 /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		04F98E6F22A50A4F00BE15A2 /* TBUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBUtils.swift; sourceTree = "<group>"; };
 		532BEFEB20F455BE00EF0E8C /* TBExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532BEFEE20F455BE00EF0E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532BEFF020F455BE00EF0E8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,10 +87,6 @@
 		532BF00D20F455C700EF0E8C /* TBExtensionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TBExtensionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		532BF01120F455C700EF0E8C /* TBExtensionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBExtensionsUITests.swift; sourceTree = "<group>"; };
 		532BF01320F455C700EF0E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		532BF02120F456F000EF0E8C /* TBData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBData.swift; sourceTree = "<group>"; };
-		532BF02320F460A500EF0E8C /* TBString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBString.swift; sourceTree = "<group>"; };
-		532BF02520F4A36400EF0E8C /* TBInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBInt.swift; sourceTree = "<group>"; };
-		532BF02820F4A9A500EF0E8C /* TBUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBUtils.swift; sourceTree = "<group>"; };
 		532BF02A20F4B73B00EF0E8C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		532BF02B20F4B73B00EF0E8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,22 +116,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04F98E4F22A5054700BE15A2 /* UIKit */ = {
+		04F98E5C22A50A4F00BE15A2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				04F98E5022A5054700BE15A2 /* TBTextView.swift */,
-				04F98E5122A5054700BE15A2 /* TBView.swift */,
-				04F98E5222A5054700BE15A2 /* TBTabBar.swift */,
-				04F98E5322A5054700BE15A2 /* TBLabel.swift */,
-				04F98E5422A5054700BE15A2 /* TBTextField.swift */,
+				04F98E5D22A50A4F00BE15A2 /* UIKit */,
+				04F98E6322A50A4F00BE15A2 /* Foundation */,
+				04F98E6B22A50A4F00BE15A2 /* Utils */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		04F98E5D22A50A4F00BE15A2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				04F98E5E22A50A4F00BE15A2 /* TBTextView.swift */,
+				04F98E5F22A50A4F00BE15A2 /* TBView.swift */,
+				04F98E6022A50A4F00BE15A2 /* TBTabBar.swift */,
+				04F98E6122A50A4F00BE15A2 /* TBLabel.swift */,
+				04F98E6222A50A4F00BE15A2 /* TBTextField.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		04F98E6322A50A4F00BE15A2 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				04F98E6422A50A4F00BE15A2 /* TBBinary.swift */,
+				04F98E6522A50A4F00BE15A2 /* TBString.swift */,
+				04F98E6622A50A4F00BE15A2 /* TBColor.swift */,
+				04F98E6722A50A4F00BE15A2 /* TBInt.swift */,
+				04F98E6822A50A4F00BE15A2 /* TBUInt.swift */,
+				04F98E6922A50A4F00BE15A2 /* TBData.swift */,
+				04F98E6A22A50A4F00BE15A2 /* TBTimer.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		04F98E6B22A50A4F00BE15A2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				04F98E6C22A50A4F00BE15A2 /* TBRegExp.swift */,
+				04F98E6D22A50A4F00BE15A2 /* Logger.swift */,
+				04F98E6E22A50A4F00BE15A2 /* AppInfo.swift */,
+				04F98E6F22A50A4F00BE15A2 /* TBUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		532BEFE220F455BE00EF0E8C = {
 			isa = PBXGroup;
 			children = (
 				532BF02A20F4B73B00EF0E8C /* LICENSE */,
+				04F98E5A22A5084B00BE15A2 /* TBExtensions.podspec */,
 				532BF02B20F4B73B00EF0E8C /* README.md */,
 				04F98E43229E97BB00BE15A2 /* MyPlayground.playground */,
 				532BEFED20F455BE00EF0E8C /* TBExtensions */,
@@ -152,10 +190,8 @@
 		532BEFED20F455BE00EF0E8C /* TBExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				04F98E5C22A50A4F00BE15A2 /* Classes */,
 				04F98E4C22A5039700BE15A2 /* TBExtensions.entitlements */,
-				532BF02720F4A99400EF0E8C /* Utils */,
-				532BF01F20F4566500EF0E8C /* Foundation */,
-				04F98E4F22A5054700BE15A2 /* UIKit */,
 				532BEFEE20F455BE00EF0E8C /* AppDelegate.swift */,
 				532BEFF020F455BE00EF0E8C /* ViewController.swift */,
 				532BEFF820F455C700EF0E8C /* Assets.xcassets */,
@@ -183,31 +219,6 @@
 				532BF01320F455C700EF0E8C /* Info.plist */,
 			);
 			path = TBExtensionsUITests;
-			sourceTree = "<group>";
-		};
-		532BF01F20F4566500EF0E8C /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				04F98E4822A4FB8000BE15A2 /* TBTimer.swift */,
-				532BF02120F456F000EF0E8C /* TBData.swift */,
-				532BF02320F460A500EF0E8C /* TBString.swift */,
-				532BF02520F4A36400EF0E8C /* TBInt.swift */,
-				04F98E41229E8A6300BE15A2 /* TBUInt.swift */,
-				04F98E4622A4FA5C00BE15A2 /* TBBinary.swift */,
-				04F98E4A22A4FD2F00BE15A2 /* TBColor.swift */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		532BF02720F4A99400EF0E8C /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				532BF02820F4A9A500EF0E8C /* TBUtils.swift */,
-				04F98E3D229E25D900BE15A2 /* AppInfo.swift */,
-				04F98E3F229E619000BE15A2 /* Logger.swift */,
-				04F98E4D22A5040800BE15A2 /* TBRegExp.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F98E5B22A5084B00BE15A2 /* TBExtensions.podspec in Resources */,
 				532BEFFC20F455C700EF0E8C /* LaunchScreen.storyboard in Resources */,
 				532BEFF920F455C700EF0E8C /* Assets.xcassets in Resources */,
 				532BF02D20F4B73B00EF0E8C /* README.md in Resources */,
@@ -351,25 +363,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F98E4E22A5040800BE15A2 /* TBRegExp.swift in Sources */,
+				04F98E7322A50A4F00BE15A2 /* TBLabel.swift in Sources */,
 				532BEFF720F455BF00EF0E8C /* TBExtensions.xcdatamodeld in Sources */,
-				532BF02920F4A9A500EF0E8C /* TBUtils.swift in Sources */,
+				04F98E7522A50A4F00BE15A2 /* TBBinary.swift in Sources */,
+				04F98E7A22A50A4F00BE15A2 /* TBData.swift in Sources */,
+				04F98E7F22A50A4F00BE15A2 /* TBUtils.swift in Sources */,
+				04F98E7022A50A4F00BE15A2 /* TBTextView.swift in Sources */,
+				04F98E7422A50A4F00BE15A2 /* TBTextField.swift in Sources */,
+				04F98E7122A50A4F00BE15A2 /* TBView.swift in Sources */,
+				04F98E7922A50A4F00BE15A2 /* TBUInt.swift in Sources */,
+				04F98E7D22A50A4F00BE15A2 /* Logger.swift in Sources */,
 				532BEFF120F455BE00EF0E8C /* ViewController.swift in Sources */,
-				04F98E5522A5054700BE15A2 /* TBTextView.swift in Sources */,
 				532BEFEF20F455BE00EF0E8C /* AppDelegate.swift in Sources */,
-				04F98E40229E619000BE15A2 /* Logger.swift in Sources */,
-				04F98E5722A5054700BE15A2 /* TBTabBar.swift in Sources */,
-				04F98E5822A5054700BE15A2 /* TBLabel.swift in Sources */,
-				532BF02420F460A500EF0E8C /* TBString.swift in Sources */,
-				04F98E5622A5054700BE15A2 /* TBView.swift in Sources */,
-				04F98E3E229E25D900BE15A2 /* AppInfo.swift in Sources */,
-				04F98E4922A4FB8000BE15A2 /* TBTimer.swift in Sources */,
-				04F98E5922A5054700BE15A2 /* TBTextField.swift in Sources */,
-				04F98E4722A4FA5C00BE15A2 /* TBBinary.swift in Sources */,
-				04F98E4B22A4FD2F00BE15A2 /* TBColor.swift in Sources */,
-				04F98E42229E8A6300BE15A2 /* TBUInt.swift in Sources */,
-				532BF02220F456F000EF0E8C /* TBData.swift in Sources */,
-				532BF02620F4A36400EF0E8C /* TBInt.swift in Sources */,
+				04F98E7C22A50A4F00BE15A2 /* TBRegExp.swift in Sources */,
+				04F98E7B22A50A4F00BE15A2 /* TBTimer.swift in Sources */,
+				04F98E7722A50A4F00BE15A2 /* TBColor.swift in Sources */,
+				04F98E7622A50A4F00BE15A2 /* TBString.swift in Sources */,
+				04F98E7222A50A4F00BE15A2 /* TBTabBar.swift in Sources */,
+				04F98E7822A50A4F00BE15A2 /* TBInt.swift in Sources */,
+				04F98E7E22A50A4F00BE15A2 /* AppInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
