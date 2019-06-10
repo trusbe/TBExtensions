@@ -13,10 +13,6 @@ public func logger(with title: String, subTitle: String, info: String?) {
 }
 
 
-// MARK: - TEST
-
-
-
 // MARK: - TBBinary
 public struct TBBinary {
     public let bytes: [UInt8]

@@ -54,7 +54,6 @@ index3.uint32Little
 
 index2.int16Big
 index3.int32Big
-//index4.int64Big
 
 index2.uint16Big
 index3.uint32Big

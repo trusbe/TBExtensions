@@ -10,7 +10,7 @@ import Foundation
 
 
 // MARK: - UInt8
-extension UInt8 {
+public extension UInt8 {
     /// Data to UInt8
     init(data: Data) {
         self = data.withUnsafeBytes { $0.load(as: UInt8.self) }
@@ -32,7 +32,7 @@ extension UInt8 {
 
 
 // MARK: - UInt16
-extension UInt16 {
+public extension UInt16 {
     /// Hex String to UInt16
     init?(hex: String) {
         guard hex.count == 4, let value = UInt16(hex, radix: 16) else {
@@ -66,7 +66,7 @@ extension UInt16 {
 
 
 // MARK: - UInt32
-extension UInt32 {
+public extension UInt32 {
     /// Hex String to UInt32
     init?(hex: String) {
         guard hex.count == 8, let value = UInt32(hex, radix: 16) else {
@@ -109,7 +109,7 @@ extension UInt32 {
 
 
 // MARK: - UInt64
-extension UInt64 {
+public extension UInt64 {
     /// Hex String to UInt64
     init?(hex: String) {
         guard hex.count == 16, let value = UInt64(hex, radix: 16) else {

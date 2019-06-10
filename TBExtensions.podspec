@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TBExtensions"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Common extended interface collection project."
   s.description  = <<-DESC
 This project mainly concentrates on some commonly used extension interfaces, which is convenient for rapid project development using Swift.

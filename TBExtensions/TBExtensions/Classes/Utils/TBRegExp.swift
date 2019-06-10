@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - TBRegExp
-class TBRegExp {
+public class TBRegExp {
     static func test(_ str:String,_ pattern:String)->Bool{
         let regex = try! NSRegularExpression(pattern: pattern, options:[NSRegularExpression.Options.caseInsensitive])
         let resultNum = regex.numberOfMatches(in: str, options: NSRegularExpression.MatchingOptions(rawValue: 0) , range: NSMakeRange(0, str.count))
@@ -17,7 +17,7 @@ class TBRegExp {
             return true
         }
         return false
-//        return str.range(of: pattern, options:.regularExpression) != nil//or do something like this: return RegExpParser.match(pattern,options).count > 0
+        //        return str.range(of: pattern, options:.regularExpression) != nil//or do something like this: return RegExpParser.match(pattern,options).count > 0
     }
     
     public static func isValidUUID(_ aValue: String) -> Bool {

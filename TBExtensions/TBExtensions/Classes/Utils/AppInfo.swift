@@ -9,23 +9,23 @@
 import Foundation
 import SystemConfiguration.CaptiveNetwork
 
-struct AppInfo {
+public struct AppInfo {
     
     // Non-instantiable.
     private init() {}
     
     /// Returns Application version as String.
-    static var version: String {
+    public static var version: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
     }
     
     /// Returns Build Number as String.
-    static var buildNumber: String {
+    public static var buildNumber: String {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
     }
     
     /// 获取当前连接 WIFI 的 SSID, iOS12 以后需要在项目的 Capabilities -> Access WiFi Information -> ON
-    static func getCurrentWiFiSSID() -> String? {
+    public static func getCurrentWiFiSSID() -> String? {
         var ssid: String?
         if let interfaces = CNCopySupportedInterfaces() as NSArray? {
             for interface in interfaces {
@@ -38,7 +38,7 @@ struct AppInfo {
         return ssid
     }
     /// 获取当前 Wi-Fi SSID, iOS12 以后需要在项目的 Capabilities -> Access WiFi Information -> ON
-    static func getWiFiSSID() -> String? {
+    public static func getWiFiSSID() -> String? {
         guard let interfaces = CNCopySupportedInterfaces() as? [String] else { return nil }
         let key = kCNNetworkInfoKeySSID as String
         for interface in interfaces {

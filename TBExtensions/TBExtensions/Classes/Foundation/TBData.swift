@@ -9,10 +9,10 @@
 import Foundation
 
 // MARK: - Init
-extension Data {
+public extension Data {
     /// Hex string to Data representation
     /// Inspired by https://stackoverflow.com/questions/26501276/converting-hex-string-to-nsdata-in-swift
-    public init?(hex: String) {
+    init?(hex: String) {
         guard hex.count % 2 == 0 else {
             return nil
         }
@@ -32,15 +32,15 @@ extension Data {
         self = data
     }
     /// Hexadecimal string representation of `Data` object.
-    public var hex: String {
+    var hex: String {
         return map { String(format: "%02X", $0) }.joined()
     }
     /// 数据转换成任意格式的字符串
-    public func toString(as encoding: String.Encoding) -> String! {
+    func toString(as encoding: String.Encoding) -> String! {
         return String(data: self, encoding: encoding)
     }
     /// 数据转换成 UTF8 编码字符串
-    public var utf8String: String? {
+    var utf8String: String? {
         return toString(as: .utf8)
     }
     /// 获取数据字节数组
@@ -49,20 +49,20 @@ extension Data {
         return [UInt8](buffer)
     }
     /// 随机生成指定数量的数据
-    public static func randomData(length: Int) -> Data {
+    static func randomData(length: Int) -> Data {
         let bytes = malloc(length)
         let data = Data(bytes: bytes!, count: length)
         free(bytes)
         return data
     }
     /// Data to Int8
-    public var int8: Int8 {
+    var int8: Int8 {
         get {
             return Int8(bitPattern: self[0])
         }
     }
     /// Data to Int16, littleEndian
-    public var int16Little: Int16 {
+    var int16Little: Int16 {
         get {
             #if swift(>=5.0)
             return Int16(littleEndian: self.withUnsafeBytes { $0.load(as: Int16.self) })
@@ -72,7 +72,7 @@ extension Data {
         }
     }
     /// Data to Int32, littleEndian
-    public var int32Little: Int32 {
+    var int32Little: Int32 {
         get {
             #if swift(>=5.0)
             return Int32(littleEndian: self.withUnsafeBytes { $0.load(as: Int32.self) })
@@ -92,7 +92,7 @@ extension Data {
         }
     }
     /// Data to UInt8
-    public var uint8: UInt8 {
+    var uint8: UInt8 {
         get {
             var number: UInt8 = 0
             self.copyBytes(to:&number, count: MemoryLayout<UInt8>.size)
@@ -100,7 +100,7 @@ extension Data {
         }
     }
     /// Data to UInt16, littleEndian
-    public var uint16Little: UInt16 {
+    var uint16Little: UInt16 {
         get {
             #if swift(>=5.0)
             return UInt16(littleEndian: self.withUnsafeBytes { $0.load(as: UInt16.self) })
@@ -110,7 +110,7 @@ extension Data {
         }
     }
     /// Data to UInt32, littleEndian
-    public var uint32Little: UInt32 {
+    var uint32Little: UInt32 {
         get {
             #if swift(>=5.0)
             return UInt32(littleEndian: self.withUnsafeBytes { $0.load(as: UInt32.self) })
@@ -120,7 +120,7 @@ extension Data {
         }
     }
     /// Data to UInt64, littleEndian
-    private var uint64Little: UInt64 {
+    var uint64Little: UInt64 {
         get {
             #if swift(>=5.0)
             return UInt64(littleEndian: self.withUnsafeBytes { $0.load(as: UInt64.self) })
@@ -130,7 +130,7 @@ extension Data {
         }
     }
     /// Data to Int16, bigEndian
-    public var int16Big: Int16 {
+    var int16Big: Int16 {
         get {
             #if swift(>=5.0)
             return Int16(bigEndian: self.withUnsafeBytes { $0.load(as: Int16.self) })
@@ -140,7 +140,7 @@ extension Data {
         }
     }
     /// Data to Int32, bigEndian
-    public var int32Big: Int32 {
+    var int32Big: Int32 {
         get {
             #if swift(>=5.0)
             return Int32(bigEndian: self.withUnsafeBytes { $0.load(as: Int32.self) })
@@ -150,7 +150,7 @@ extension Data {
         }
     }
     /// Data to Int64, bigEndian
-    private var int64Big: Int64 {
+    var int64Big: Int64 {
         get {
             #if swift(>=5.0)
             return Int64(bigEndian: self.withUnsafeBytes { $0.load(as: Int64.self) })
@@ -160,7 +160,7 @@ extension Data {
         }
     }
     /// Data to UInt16, bigEndian
-    public var uint16Big: UInt16 {
+    var uint16Big: UInt16 {
         get {
             #if swift(>=5.0)
             return UInt16(bigEndian: self.withUnsafeBytes { $0.load(as: UInt16.self) })
@@ -170,7 +170,7 @@ extension Data {
         }
     }
     /// Data to UInt32, bigEndian
-    public var uint32Big: UInt32 {
+    var uint32Big: UInt32 {
         get {
             #if swift(>=5.0)
             return UInt32(bigEndian: self.withUnsafeBytes { $0.load(as: UInt32.self) })
@@ -256,5 +256,4 @@ extension Data : DataConvertible {
         
         return data
     }
-    
 }
