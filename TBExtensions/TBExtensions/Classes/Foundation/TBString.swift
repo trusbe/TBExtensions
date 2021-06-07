@@ -41,6 +41,14 @@ public extension String {
     internal var u16BinaryToHex: String {
         return u16BinaryToDecimal.hex
     }
+    /// 2进制转10进制, UInt64
+    internal var u64BinaryToDecimal: UInt64 {
+        return UInt64(strtoul(self, nil, 8))
+    }
+    /// 2进制转16进制, UInt16
+    internal var u64BinaryToHex: String {
+        return u64BinaryToDecimal.hex
+    }
     /// 字符串转数据, 非有损转换
     internal func toData(_ aString: String, encoding: String.Encoding) -> Data? {
         return aString.data(using: encoding, allowLossyConversion: false)

@@ -11,6 +11,10 @@ import Foundation
 public struct TBBinary {
     public let bytes: [UInt8]
     public var readingOffset: Int = 0
+    
+    public init() {
+        self.bytes = [UInt8]()
+    }
     // 字节数组转 TBBinary
     public init(bytes: [UInt8]) {
         self.bytes = bytes

@@ -31,23 +31,28 @@ public extension Data {
         }
         self = data
     }
+    
     /// Hexadecimal string representation of `Data` object.
     var hex: String {
         return map { String(format: "%02X", $0) }.joined()
     }
+
     /// 数据转换成任意格式的字符串
     func toString(as encoding: String.Encoding) -> String! {
         return String(data: self, encoding: encoding)
     }
+    
     /// 数据转换成 UTF8 编码字符串
     var utf8String: String? {
         return toString(as: .utf8)
     }
+    
     /// 获取数据字节数组
     private func getByteArray(_ pointer: UnsafePointer<UInt8>) -> [UInt8] {
         let buffer = UnsafeBufferPointer<UInt8>(start: pointer, count: count)
         return [UInt8](buffer)
     }
+    
     /// 随机生成指定数量的数据
     static func randomData(length: Int) -> Data {
         let bytes = malloc(length)
@@ -55,12 +60,14 @@ public extension Data {
         free(bytes)
         return data
     }
+    
     /// Data to Int8
     var int8: Int8 {
         get {
             return Int8(bitPattern: self[0])
         }
     }
+    
     /// Data to Int16, littleEndian
     var int16Little: Int16 {
         get {
@@ -71,6 +78,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to Int32, littleEndian
     var int32Little: Int32 {
         get {
@@ -81,6 +89,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to Int64, littleEndian
     private var int64Little: Int64 {
         get {
@@ -91,6 +100,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to UInt8
     var uint8: UInt8 {
         get {
@@ -99,6 +109,7 @@ public extension Data {
             return number
         }
     }
+    
     /// Data to UInt16, littleEndian
     var uint16Little: UInt16 {
         get {
@@ -109,6 +120,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to UInt32, littleEndian
     var uint32Little: UInt32 {
         get {
@@ -119,6 +131,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to UInt64, littleEndian
     var uint64Little: UInt64 {
         get {
@@ -129,6 +142,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to Int16, bigEndian
     var int16Big: Int16 {
         get {
@@ -139,6 +153,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to Int32, bigEndian
     var int32Big: Int32 {
         get {
@@ -149,6 +164,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to Int64, bigEndian
     var int64Big: Int64 {
         get {
@@ -159,6 +175,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to UInt16, bigEndian
     var uint16Big: UInt16 {
         get {
@@ -169,6 +186,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to UInt32, bigEndian
     var uint32Big: UInt32 {
         get {
@@ -179,6 +197,7 @@ public extension Data {
             #endif
         }
     }
+    
     /// Data to UInt64, bigEndian
     private var uint64Big: UInt64 {
         get {
@@ -189,11 +208,13 @@ public extension Data {
             #endif
         }
     }
+    
     /// 获取某一个字节的 UInt8 类型
     func byte(at index: Int) -> UInt8 {
         let data: UInt8 = self.subdata(in: index ..< (index + 1)).uint8
         return data
     }
+    
     /// Data to Byte Array
     func bytes() -> [UInt8] {
         // let count = MemoryLayout.size(ofValue: self)
@@ -209,51 +230,105 @@ public extension Data {
 }
 
 
+extension Data {
+    // Inspired by: https://stackoverflow.com/a/38024025/2115352
+
+    /// Converts the required number of bytes, starting from `offset`
+    /// to the value of return type.
+    ///
+    /// - parameter offset: The offset from where the bytes are to be read.
+    /// - returns: The value of type of the return type.
+    func read<R: FixedWidthInteger>(fromOffset offset: Int = 0) -> R {
+        let length = MemoryLayout<R>.size
+        
+        #if swift(>=5.0)
+        return subdata(in: offset ..< offset + length).withUnsafeBytes { $0.load(as: R.self) }
+        #else
+        return subdata(in: offset ..< offset + length).withUnsafeBytes { $0.pointee }
+        #endif
+    }
+    
+    func readUInt24(fromOffset offset: Int = 0) -> UInt32 {
+        return UInt32(self[offset]) | UInt32(self[offset + 1]) << 8 | UInt32(self[offset + 2]) << 16
+    }
+    
+    func readBigEndian<R: FixedWidthInteger>(fromOffset offset: Int = 0) -> R {
+        let r: R = read(fromOffset: offset)
+        return r.bigEndian
+    }
+}
+
+
 // Source: http://stackoverflow.com/a/42241894/2115352
 protocol DataConvertible {
     static func + (lhs: Data, rhs: Self) -> Data
     static func += (lhs: inout Data, rhs: Self)
 }
 
+
 extension DataConvertible {
-    
-    public static func + (lhs: Data, rhs: Self) -> Data {
+    static func + (lhs: Data, rhs: Self) -> Data {
         var value = rhs
-        let data = Data(buffer: UnsafeBufferPointer(start: &value, count: 1))
+        let data = withUnsafePointer(to: &value) { pointer -> Data in
+            return Data(buffer: UnsafeBufferPointer(start: pointer, count: 1))
+        }
         return lhs + data
     }
     
-    public static func += (lhs: inout Data, rhs: Self) {
+    static func += (lhs: inout Data, rhs: Self) {
         lhs = lhs + rhs
     }
-    
 }
 
 extension UInt8  : DataConvertible { }
 extension UInt16 : DataConvertible { }
 extension UInt32 : DataConvertible { }
-
+extension UInt64 : DataConvertible { }
+extension Int8   : DataConvertible { }
+extension Int16  : DataConvertible { }
+extension Int32  : DataConvertible { }
+extension Int64  : DataConvertible { }
 extension Int    : DataConvertible { }
 extension UInt   : DataConvertible { }
 extension Float  : DataConvertible { }
 extension Double : DataConvertible { }
 
+
 extension String : DataConvertible {
-    
     static func + (lhs: Data, rhs: String) -> Data {
-        guard let data = rhs.data(using: .utf8) else { return lhs}
+        guard let data = rhs.data(using: .utf8) else { return lhs }
         return lhs + data
     }
-    
 }
 
+
 extension Data : DataConvertible {
-    
     static func + (lhs: Data, rhs: Data) -> Data {
         var data = Data()
         data.append(lhs)
         data.append(rhs)
-        
         return data
+    }
+    
+    static func + (lhs: Data, rhs: Data?) -> Data {
+        guard let rhs = rhs else {
+            return lhs
+        }
+        var data = Data()
+        data.append(lhs)
+        data.append(rhs)
+        return data
+    }
+}
+
+
+extension Bool : DataConvertible {
+    
+    static func + (lhs: Data, rhs: Bool) -> Data {
+        if rhs {
+            return lhs + UInt8(0x01)
+        } else {
+            return lhs + UInt8(0x00)
+        }
     }
 }

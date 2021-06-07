@@ -12,6 +12,22 @@ public func logger(with title: String, subTitle: String, info: String?) {
     }
 }
 
+func generateGroupUnicast(_ count: Int) -> Data {
+    var ret: Data
+    // 初始地址, 前255个地址为留着备用
+    var initAddress = Data([0xC1, 0x00])
+    let addressNumber = (UInt16(initAddress[0]) << 8) | (UInt16(initAddress[1]) & 0x00FF)
+    let newAddressNumber = addressNumber + UInt16(count)
+    ret = Data([UInt8(newAddressNumber >> 8), UInt8(newAddressNumber & 0x00FF)])
+    return ret
+}
+
+generateGroupUnicast(12)
+
+
+
+
+
 
 // MARK: - TBBinary
 public struct TBBinary {
@@ -261,7 +277,7 @@ extension Data {
         }
     }
     /// Data to Int64, littleEndian
-    private var int64Little: Int64 {
+    public var int64Little: Int64 {
         get {
             #if swift(>=5.0)
             return Int64(littleEndian: self.withUnsafeBytes { $0.load(as: Int64.self) })
@@ -299,7 +315,7 @@ extension Data {
         }
     }
     /// Data to UInt64, littleEndian
-    private var uint64Little: UInt64 {
+    public var uint64Little: UInt64 {
         get {
             #if swift(>=5.0)
             return UInt64(littleEndian: self.withUnsafeBytes { $0.load(as: UInt64.self) })
@@ -329,7 +345,7 @@ extension Data {
         }
     }
     /// Data to Int64, bigEndian
-    private var int64Big: Int64 {
+    public var int64Big: Int64 {
         get {
             #if swift(>=5.0)
             return Int64(bigEndian: self.withUnsafeBytes { $0.load(as: Int64.self) })
@@ -359,7 +375,7 @@ extension Data {
         }
     }
     /// Data to UInt64, bigEndian
-    private var uint64Big: UInt64 {
+    public var uint64Big: UInt64 {
         get {
             #if swift(>=5.0)
             return UInt64(bigEndian: self.withUnsafeBytes { $0.load(as: UInt64.self) })
@@ -427,6 +443,11 @@ index3.int32Big
 index2.uint16Big
 index3.uint32Big
 //index4.uint64Big
+
+
+let index = Data([0x0F])
+let time = UInt64(index.uint8 << 48)
+
 
 
 

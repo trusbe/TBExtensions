@@ -37,6 +37,7 @@ public struct AppInfo {
         }
         return ssid
     }
+    
     /// 获取当前 Wi-Fi SSID, iOS12 以后需要在项目的 Capabilities -> Access WiFi Information -> ON
     public static func getWiFiSSID() -> String? {
         guard let interfaces = CNCopySupportedInterfaces() as? [String] else { return nil }
@@ -48,5 +49,23 @@ public struct AppInfo {
             return interfaceInfo[key] as? String
         }
         return nil
+    }
+    
+    /// 检测语言是否是中文（简体中文、繁体中文）
+    public static func isChinese() -> Bool {
+        var arr = [String]()
+        arr = UserDefaults.standard.object(forKey: "AppleLanguages") as! [String]
+        let lang = arr[0]
+        if lang.hasPrefix("zh-Hans-CN") || lang.hasPrefix("zh-Hant-CN") {
+            return true
+        }
+        return false
+    }
+
+    /// 获取当前系统使用的语言
+    public static func currentLanguage() -> String {
+        var arr = [String]()
+        arr = UserDefaults.standard.object(forKey: "AppleLanguages") as! [String]
+        return arr[0]
     }
 }

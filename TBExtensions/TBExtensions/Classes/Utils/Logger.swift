@@ -7,12 +7,21 @@
 //
 
 import Foundation
+import CoreBluetooth
 
 // Logger
-public func logger(with title: String, subTitle: String, info: String?) {
+public func logger(_ title: String, sub: String, info: String?) {
     if info == nil {
-        print("【\(title)】, \(subTitle)")
+        print("\(Date()) [\(title)], \(sub)")
     } else {
-        print("【\(title)】, \(subTitle), \(info!)")
+        print("\(Date()) [\(title)], \(sub), \(info!)")
+    }
+}
+
+public func logError(_ title: String, sub: String, error: Error?) {
+    if let e = error as? CBError {
+        print("\(Date()) [\(title)], \(sub), Error: \(e.code), \(e.localizedDescription)")
+    } else {
+        print("\(Date()) [\(title)], \(sub), Error: \(error!.localizedDescription)")
     }
 }
